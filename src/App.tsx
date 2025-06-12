@@ -7,6 +7,7 @@ import JobBoard from "@/03_JobBoard/JobBoard";
 import JobCounter from "@/04_JobCounter/JobCounter";
 import HomePage from "@/components/HomePage";
 import StyledButton from "@/05_StyledButton/StyledButton";
+import JobCounterWithState from "@/06_JobCounterWithState/JobCounterWithState";
 
 export function App() {
   return (
@@ -19,6 +20,7 @@ export function App() {
         <Route path="/job-board" element={<JobBoard />} />
         <Route path="/job-counter" element={<JobCounter />} />
         <Route path="/styled-button" element={<StyledButton />} />
+        <Route path="/advanced-job-counter" element={<JobCounterWithState />} />
       </Routes>
     </div>
   );

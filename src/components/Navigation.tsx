@@ -5,7 +5,6 @@ type Exercise = {
   id: string;
   name: string;
   path: string;
-  description?: string;
 };
 
 const exercises: Exercise[] = [
@@ -33,6 +32,11 @@ const exercises: Exercise[] = [
     id: "styled-button",
     name: "Styled Button",
     path: "/styled-button",
+  },
+  {
+    id: "advanced-job-counter",
+    name: "Advanced Job Counter",
+    path: "/advanced-job-counter",
   },
 ];
 
