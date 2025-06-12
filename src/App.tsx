@@ -3,6 +3,7 @@ import "./output.css";
 import ProfileCardComp from "@/01_ProfileCardComp/ProfileCardComp";
 import VariableDisplay from "@/02_VariableDisplay/VariableDisplay";
 import JobBoard from "@/03_JobBoard/JobBoard";
+import JobCounter from "@/04_JobCounter/JobCounter";
 
 export function App() {
   return (
@@ -17,11 +18,15 @@ export function App() {
         <Link className="bg-slate-800 p-2" to="/job-board">
           Job Board
         </Link>
+        <Link className="bg-slate-800 p-2" to="/job-counter">
+          Job Counter
+        </Link>
       </nav>
       <Routes>
         <Route path="/profile-card-component" element={<ProfileCardComp />} />
         <Route path="/react-jsx" element={<VariableDisplay />} />
         <Route path="/job-board" element={<JobBoard />} />
+        <Route path="/job-counter" element={<JobCounter />} />
       </Routes>
     </div>
   );
