@@ -48,6 +48,11 @@ const exercises: Exercise[] = [
     name: "Bot List Manager",
     path: "/bot-list-manager",
   },
+  {
+    id: "modular-job-board",
+    name: "Modular Job Board",
+    path: "/modular-job-board",
+  },
 ];
 
 export default function Navigation() {

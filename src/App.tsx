@@ -10,6 +10,7 @@ import StyledButton from "@/05_StyledButton/StyledButton";
 import JobCounterWithState from "@/06_JobCounterWithState/JobCounterWithState";
 import DynamicInputForm from "@/07_DynamicInputForm/DynamicInputForm";
 import BotListManager from "@/08_BotListManager/BotListManager";
+import ModularJobBoard from "@/09_ModularJobBoard/ModularJobBoard";
 
 export function App() {
   return (
@@ -25,6 +26,7 @@ export function App() {
         <Route path="/advanced-job-counter" element={<JobCounterWithState />} />
         <Route path="/dynamic-input-form" element={<DynamicInputForm />} />
         <Route path="/bot-list-manager" element={<BotListManager />} />
+        <Route path="/modular-job-board" element={<ModularJobBoard />} />
       </Routes>
     </div>
   );
