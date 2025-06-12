@@ -43,6 +43,11 @@ const exercises: Exercise[] = [
     name: "Dynamic Input Form",
     path: "/dynamic-input-form",
   },
+  {
+    id: "bot-list-manager",
+    name: "Bot List Manager",
+    path: "/bot-list-manager",
+  },
 ];
 
 export default function Navigation() {
