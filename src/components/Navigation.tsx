@@ -53,6 +53,11 @@ const exercises: Exercise[] = [
     name: "Modular Job Board",
     path: "/modular-job-board",
   },
+  {
+    id: "status-board",
+    name: "Status Board",
+    path: "/status-board",
+  },
 ];
 
 export default function Navigation() {
