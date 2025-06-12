@@ -13,25 +13,26 @@ const exercises: Exercise[] = [
     id: "profile-card",
     name: "Reusable Profile Card",
     path: "/profile-card-component",
-    description: "Pokemon profile cards with reusable components",
   },
   {
     id: "react-jsx",
     name: "React JSX",
     path: "/react-jsx",
-    description: "Variable display and JSX fundamentals",
   },
   {
     id: "job-board",
     name: "Job Board",
     path: "/job-board",
-    description: "Conditional rendering with job listings",
   },
   {
     id: "job-counter",
     name: "Job Counter",
     path: "/job-counter",
-    description: "State management with useState",
+  },
+  {
+    id: "styled-button",
+    name: "Styled Button",
+    path: "/styled-button",
   },
 ];
 
