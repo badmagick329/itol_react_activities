@@ -1,4 +1,4 @@
-import { Pokemon, PokenameResult } from "@/common/poke-api-types";
+import { Pokemon, PokenameResult } from "@/lib/common/poke-api-types";
 
 export class PokeClient {
   static async list({

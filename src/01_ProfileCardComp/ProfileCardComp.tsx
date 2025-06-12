@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { PokeClient } from "@/common/poke-client";
-import { Pokemon } from "@/common/poke-api-types";
+import { PokeClient } from "@/lib/common/poke-client";
+import { Pokemon } from "@/lib/common/poke-api-types";
 import Card, { Bio } from "./Card";
 
 export default function ProfileCardComp() {
