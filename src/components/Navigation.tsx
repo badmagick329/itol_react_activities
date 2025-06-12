@@ -38,6 +38,11 @@ const exercises: Exercise[] = [
     name: "Advanced Job Counter",
     path: "/advanced-job-counter",
   },
+  {
+    id: "dynamic-input-form",
+    name: "Dynamic Input Form",
+    path: "/dynamic-input-form",
+  },
 ];
 
 export default function Navigation() {
