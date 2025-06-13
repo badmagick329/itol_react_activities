@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import usePasswordGenerator from "./usePasswordGenerator";
 
 type PasswordOptions = {
   lengthVal?: number;
@@ -11,50 +11,23 @@ export default function PasswordGen({
   numberAllowedVal = false,
   characterAllowedVal = false,
 }: PasswordOptions) {
-  const [length, setLength] = useState<number>(lengthVal);
-  const [numberAllowed, setNumberAllowed] = useState<boolean>(numberAllowedVal);
-  const [characterAllowed, setCharacterAllowed] =
-    useState<boolean>(characterAllowedVal);
-  const [password, setPassword] = useState<string>("");
-  const [copied, setCopied] = useState<boolean>(false);
-
-  const passwordRef = useRef<HTMLInputElement>(null);
-
-  const generatePassword = useCallback(() => {
-    let pass = "";
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-    if (numberAllowed) str += "0123456789";
-    if (characterAllowed) str += "!@#$%^&*()_+-=[]{}|;:,.<>?";
-
-    for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1);
-      pass += str.charAt(char);
-    }
-
-    setPassword(pass);
-  }, [length, numberAllowed, characterAllowed]);
-
-  const copyPasswordToClipboard = useCallback(() => {
-    if (passwordRef.current) {
-      passwordRef.current?.select();
-      passwordRef.current?.setSelectionRange(0, 99999);
-      window.navigator.clipboard.writeText(password);
-      setCopied(true);
-
-      setTimeout(() => setCopied(false), 2000);
-    }
-  }, [password]);
-
-  useEffect(() => {
-    if (length > 0) {
-      generatePassword();
-    }
-  }, [length, numberAllowed, characterAllowed, generatePassword]);
-
-  useEffect(() => {
-    generatePassword();
-  }, []);
+  const {
+    length,
+    numberAllowed,
+    characterAllowed,
+    password,
+    copied,
+    setLength,
+    setNumberAllowed,
+    setCharacterAllowed,
+    generatePassword,
+    copyPasswordToClipboard,
+    passwordRef,
+  } = usePasswordGenerator({
+    initialLength: lengthVal,
+    initialNumberAllowed: numberAllowedVal,
+    initialCharacterAllowed: characterAllowedVal,
+  });
 
   return (
     <div className="min-h-screen bg-gray-900 py-8 px-4">
@@ -73,7 +46,7 @@ export default function PasswordGen({
               <input
                 type="text"
                 value={password}
-                className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-l-md text-gray-100 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-l-md text-gray-100 font-mono text-sm focus:outline-none"
                 placeholder="Your password will appear here"
                 readOnly
                 ref={passwordRef}
