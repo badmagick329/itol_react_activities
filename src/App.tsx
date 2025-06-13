@@ -17,6 +17,7 @@ import JobManagementForm2 from "@/12_JobManagementForm2/JobManagementForm2";
 import JobManagementFormReusable from "@/13_JobManagementFormReusable/JobManagementFormReusable";
 import JobManagementFormDynamic from "@/14_JobManagementFormDynamic/JobManagementFormDynamic";
 import EnhancedFormHandling from "@/15_EnhancedFormHandling/EnhancedFormHandling";
+import MultiSelectCategories from "@/16_MultiSelectCategories/MultiSelectCategories";
 
 export function App() {
   return (
@@ -50,6 +51,10 @@ export function App() {
         <Route
           path="/enhanced-form-handling"
           element={<EnhancedFormHandling />}
+        />
+        <Route
+          path="/multi-select-categories"
+          element={<MultiSelectCategories />}
         />
       </Routes>
     </div>

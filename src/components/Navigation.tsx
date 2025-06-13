@@ -83,6 +83,11 @@ const exercises: Exercise[] = [
     name: "Enhanced Form Handling",
     path: "/enhanced-form-handling",
   },
+  {
+    id: "multi-select-categories",
+    name: "Multi-Select Categories",
+    path: "/multi-select-categories",
+  },
 ];
 
 export default function Navigation() {
