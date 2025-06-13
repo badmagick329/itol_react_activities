@@ -18,6 +18,7 @@ import JobManagementFormReusable from "@/13_JobManagementFormReusable/JobManagem
 import JobManagementFormDynamic from "@/14_JobManagementFormDynamic/JobManagementFormDynamic";
 import EnhancedFormHandling from "@/15_EnhancedFormHandling/EnhancedFormHandling";
 import MultiSelectCategories from "@/16_MultiSelectCategories/MultiSelectCategories";
+import DynamicCategorySelection from "@/17_DynamicCategorySelection/DynamicCategorySelection";
 
 export function App() {
   return (
@@ -55,6 +56,10 @@ export function App() {
         <Route
           path="/multi-select-categories"
           element={<MultiSelectCategories />}
+        />
+        <Route
+          path="/dynamic-category-selection"
+          element={<DynamicCategorySelection />}
         />
       </Routes>
     </div>

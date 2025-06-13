@@ -88,6 +88,11 @@ const exercises: Exercise[] = [
     name: "Multi-Select Categories",
     path: "/multi-select-categories",
   },
+  {
+    id: "dynamic-category-selection",
+    name: "Dynamic Category Selection",
+    path: "/dynamic-category-selection",
+  },
 ];
 
 export default function Navigation() {
