@@ -24,6 +24,7 @@ import JobManagerDelete from "@/19_JobManagerDelete/JobManagerDelete";
 import JobManagerLocalStorage from "@/20_JobManagerLocalStorage/JobManagerLocalStorage";
 import CalcHeader from "@/21_CalcHeader/CalcHeader";
 import PasswordGen from "@/22_PasswordGen/PasswordGen";
+import MovieReviewApp from "@/23_MovieReviewApp/MovieReviewApp";
 
 export function App() {
   return (
@@ -74,6 +75,7 @@ export function App() {
         />
         <Route path="/investment-calculator" element={<CalcHeader />} />
         <Route path="/password-generator" element={<PasswordGen />} />
+        <Route path="/movie-review-app" element={<MovieReviewApp />} />
       </Routes>
     </div>
   );

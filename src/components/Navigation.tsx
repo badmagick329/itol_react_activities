@@ -118,6 +118,11 @@ const exercises: Exercise[] = [
     name: "Password Generator",
     path: "/password-generator",
   },
+  {
+    id: "movie-review-app",
+    name: "Movie Review App",
+    path: "/movie-review-app",
+  },
 ];
 
 export default function Navigation() {
