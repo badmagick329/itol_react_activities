@@ -128,10 +128,9 @@ export default function Navigation() {
             className="bg-slate-800 text-white px-3 py-2 rounded hover:bg-slate-700"
           >
             Exercises ▼
-          </button>
-
+          </button>{" "}
           {isDropdownOpen && (
-            <div className="absolute right-0 mt-1 w-64 bg-slate-800 rounded shadow-lg z-20">
+            <div className="absolute right-0 mt-1 w-64 bg-slate-800 rounded shadow-lg z-20 max-h-80 overflow-y-auto">
               {exercises.map((exercise) => (
                 <Link
                   key={exercise.id}
