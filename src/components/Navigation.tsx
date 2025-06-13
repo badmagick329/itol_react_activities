@@ -93,6 +93,11 @@ const exercises: Exercise[] = [
     name: "Dynamic Category Selection",
     path: "/dynamic-category-selection",
   },
+  {
+    id: "job-manager",
+    name: "Job Manager",
+    path: "/job-manager",
+  },
 ];
 
 export default function Navigation() {
