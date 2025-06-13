@@ -1,22 +1,18 @@
 import { useState } from "react";
+import { InputValue } from "@/21_CalcHeader/CalcHeader";
 
-const UserInput = () => {
-  const initialValues = {
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  };
-
-  const [userInput, setUserInput] = useState(initialValues);
-  const [currency, setCurrency] = useState("USD");
+const UserInput = ({
+  userInput,
+  setUserInput,
+  initialValues,
+  currencies,
+}: {
+  userInput: InputValue;
+  setUserInput: React.Dispatch<React.SetStateAction<InputValue>>;
+  initialValues: InputValue;
+  currencies: string[];
+}) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const currencySymbols = {
-    USD: "$",
-    EUR: "€",
-    GBP: "£",
-  };
 
   const validateInput = (field: string, value: number) => {
     if (value <= 0) {
@@ -53,28 +49,33 @@ const UserInput = () => {
   };
 
   const handleCurrencyChange = (newCurrency: string) => {
-    setCurrency(newCurrency);
+    setUserInput((prevUserInput) => ({
+      ...prevUserInput,
+      currency: newCurrency,
+    }));
   };
 
   const isFormValid =
     Object.values(errors).every((error) => error === "") &&
-    Object.values(userInput).every((value) => value > 0);
+    Object.values(userInput)
+      .filter((value) => typeof value === "number")
+      .every((value) => value > 0);
   return (
     <section className="p-4 max-w-lg mx-auto my-8 rounded bg-gray-800">
       <div className="mb-4">
         <label className="block font-bold mb-2">Currency:</label>
         <div className="flex gap-2">
-          {Object.keys(currencySymbols).map((curr) => (
+          {currencies.map((curr) => (
             <button
               key={curr}
               onClick={() => handleCurrencyChange(curr)}
               className={`px-3 py-1 rounded border ${
-                currency === curr
+                userInput.currency === curr
                   ? "bg-blue-500 text-white border-blue-500"
                   : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
               }`}
             >
-              {curr} ({currencySymbols[curr as keyof typeof currencySymbols]})
+              {curr}
             </button>
           ))}
         </div>
@@ -83,8 +84,7 @@ const UserInput = () => {
       <form>
         <div className="flex justify-between gap-6 mb-2">
           <label htmlFor="initialInvestment" className="font-bold">
-            Initial Investment (
-            {currencySymbols[currency as keyof typeof currencySymbols]})
+            Initial Investment
           </label>
           <div>
             <input
@@ -107,8 +107,7 @@ const UserInput = () => {
         </div>
         <div className="flex justify-between gap-6 mb-2">
           <label htmlFor="annualInvestment" className="font-bold">
-            Annual Investment (
-            {currencySymbols[currency as keyof typeof currencySymbols]})
+            Annual Investment ({userInput.currency})
           </label>
           <div>
             <input

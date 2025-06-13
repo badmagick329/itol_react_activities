@@ -1,21 +1,39 @@
 import Header from "@/21_CalcHeader/components/Header";
+import Output from "@/21_CalcHeader/components/Output";
 import UserInput from "@/21_CalcHeader/components/UserInput";
+import { useState } from "react";
+
+export type InputValue = {
+  initialInvestment: number;
+  annualInvestment: number;
+  expectedReturn: number;
+  duration: number;
+  currency: string;
+};
+
+const currencies = ["$", "€", "£", "¥", "₹"];
 
 export default function CalcHeader() {
+  const initialValues = {
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+    currency: "$",
+  };
+
+  const [userInput, setUserInput] = useState(initialValues);
+
   return (
     <div className="min-h-screen bg-gray-600">
       <Header title="Investment Calculator" />
-      <UserInput />
-      <div className="container mx-auto px-4 py-8">
-        <div className="bg-white/60 rounded-lg shadow-md p-6">
-          <p className="text-gray-600 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic debitis
-            beatae, ullam autem incidunt totam eligendi sint numquam, dolorum
-            consequuntur cum, aliquid cumque omnis nam nulla ratione consectetur
-            illum deserunt.
-          </p>
-        </div>
-      </div>
+      <UserInput
+        userInput={userInput}
+        setUserInput={setUserInput}
+        initialValues={initialValues}
+        currencies={currencies}
+      />
+      <Output inputValue={userInput} />
     </div>
   );
 }

@@ -109,9 +109,9 @@ const exercises: Exercise[] = [
     path: "/job-manager-localstorage",
   },
   {
-    id: "investment-calculator-header",
-    name: "Investment Calculator Header",
-    path: "/investment-calculator-header",
+    id: "investment-calculator",
+    name: "Investment Calculator",
+    path: "/investment-calculator",
   },
 ];
 

@@ -71,7 +71,7 @@ export function App() {
           path="/job-manager-localstorage"
           element={<JobManagerLocalStorage />}
         />
-        <Route path="/investment-calculator-header" element={<CalcHeader />} />
+        <Route path="/investment-calculator" element={<CalcHeader />} />
       </Routes>
     </div>
   );

@@ -411,7 +411,6 @@ export default function EnhancedFormHandling() {
         <h1 className="text-3xl font-bold text-white mb-8 text-center">
           Enhanced Form Handling
         </h1>
-        {/* Success Message */}
         {successMessage && (
           <div className="mb-6 bg-green-900/20 border border-green-600 text-green-400 px-4 py-3 rounded-lg text-center">
             {successMessage}
