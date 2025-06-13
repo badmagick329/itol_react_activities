@@ -108,6 +108,11 @@ const exercises: Exercise[] = [
     name: "Job Manager LocalStorage",
     path: "/job-manager-localstorage",
   },
+  {
+    id: "investment-calculator-header",
+    name: "Investment Calculator Header",
+    path: "/investment-calculator-header",
+  },
 ];
 
 export default function Navigation() {

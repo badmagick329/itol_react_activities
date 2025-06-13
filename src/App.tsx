@@ -22,6 +22,7 @@ import DynamicCategorySelection from "@/17_DynamicCategorySelection/DynamicCateg
 import JobManager from "@/18_JobManager/JobManager";
 import JobManagerDelete from "@/19_JobManagerDelete/JobManagerDelete";
 import JobManagerLocalStorage from "@/20_JobManagerLocalStorage/JobManagerLocalStorage";
+import CalcHeader from "@/21_CalcHeader/CalcHeader";
 
 export function App() {
   return (
@@ -70,6 +71,7 @@ export function App() {
           path="/job-manager-localstorage"
           element={<JobManagerLocalStorage />}
         />
+        <Route path="/investment-calculator-header" element={<CalcHeader />} />
       </Routes>
     </div>
   );

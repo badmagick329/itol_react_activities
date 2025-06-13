@@ -13,6 +13,7 @@
     "css:watch": "tailwindcss -i src/input.css -o src/output.css --watch"
   },
   "dependencies": {
+    "jspdf": "^3.0.1",
     "react": "^19",
     "react-dom": "^19",
     "react-router-dom": "^7.6.2"
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.10",
     "@types/bun": "latest",
+    "@types/jspdf": "^2.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19"
   }
