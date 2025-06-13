@@ -1,47 +1,3 @@
-// Objective: Enhance the job management application by adding functionality to the delete button, implementing job status updates, and managing the overall state of the application.
-
-// Remember: Before you start this activity it is important to understand the importance of immutability when updating state, and you should try to think about component structure and the flow of data through the application.
-
-// Instructions:
-// 1.Implement state management for the job list.
-// 2.Add functionality to the delete button.
-// 3.Implement job status updates.
-// 4.Create a mechanism to add new jobs to the list.
-// Tasks:
-// 1.Implement the deleteJob function:
-
-//     Use the setJobs function to update the state, removing the job with the specified id.
-
-// 2.Implement the updateJobStatus function:
-
-//     Update the status of a job with the given id to the new status.
-
-// 3.Implement the addNewJob function:
-
-//     Create a new job object and add it to the jobs array.
-
-// 4.Create a form component for adding new jobs:
-
-//     Include an input field for the job title and a submit button.
-//     Use the addNewJob function to add the new job to the list.
-
-// 5.Update the JobStatus component to include:
-
-//     The delete button functionality (call deleteJob when clicked).
-//     A way to update the job status (e.g., a dropdown or buttons for different statuses).
-
-// 6.In the App component, render JobColumn components for each status:
-
-//     "Need to Start", "In Progress", and "Completed".
-//     Filter jobs based on their status and pass them to the appropriate column.
-
-// 7.Ensure that all state updates trigger re-renders of the appropriate components.
-
-// Bonus Challenges:
-// 1.Implement drag-and-drop functionality to move jobs between columns.
-// 2.Add a search feature to filter jobs by title.
-// 3.Implement local storage to persist the job list between page reloads.
-
 import { useState, useEffect } from "react";
 
 type JobCategory = "Read Emails" | "Web Parsing" | "Send Emails";
@@ -267,7 +223,6 @@ function JobColumn({
 }
 
 export default function JobManagementFormDynamic() {
-  // Load jobs from localStorage or use default data
   const [jobs, setJobs] = useState<Job[]>(() => {
     const savedJobs = localStorage.getItem("dynamicJobs");
     if (savedJobs) {
@@ -307,17 +262,14 @@ export default function JobManagementFormDynamic() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Save jobs to localStorage whenever jobs change
   useEffect(() => {
     localStorage.setItem("dynamicJobs", JSON.stringify(jobs));
   }, [jobs]);
 
-  // Implement the deleteJob function
   const deleteJob = (jobId: number) => {
     setJobs((prev) => prev.filter((job) => job.id !== jobId));
   };
 
-  // Implement the updateJobStatus function
   const updateJobStatus = (jobId: number, newStatus: JobStatus) => {
     setJobs((prev) =>
       prev.map((job) =>
@@ -326,14 +278,13 @@ export default function JobManagementFormDynamic() {
     );
   };
 
-  // Implement the addNewJob function
   const addNewJob = (
     title: string,
     category: JobCategory,
     status: JobStatus = "start"
   ) => {
     const newJob: Job = {
-      id: Date.now() + Math.random(), // More unique ID
+      id: Date.now() + Math.random(),
       title: title.trim(),
       category,
       status,
