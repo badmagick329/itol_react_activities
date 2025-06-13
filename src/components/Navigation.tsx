@@ -103,6 +103,11 @@ const exercises: Exercise[] = [
     name: "Job Manager Delete",
     path: "/job-manager-delete",
   },
+  {
+    id: "job-manager-localstorage",
+    name: "Job Manager LocalStorage",
+    path: "/job-manager-localstorage",
+  },
 ];
 
 export default function Navigation() {

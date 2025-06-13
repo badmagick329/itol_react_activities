@@ -21,6 +21,7 @@ import MultiSelectCategories from "@/16_MultiSelectCategories/MultiSelectCategor
 import DynamicCategorySelection from "@/17_DynamicCategorySelection/DynamicCategorySelection";
 import JobManager from "@/18_JobManager/JobManager";
 import JobManagerDelete from "@/19_JobManagerDelete/JobManagerDelete";
+import JobManagerLocalStorage from "@/20_JobManagerLocalStorage/JobManagerLocalStorage";
 
 export function App() {
   return (
@@ -65,6 +66,10 @@ export function App() {
         />
         <Route path="/job-manager" element={<JobManager />} />
         <Route path="/job-manager-delete" element={<JobManagerDelete />} />
+        <Route
+          path="/job-manager-localstorage"
+          element={<JobManagerLocalStorage />}
+        />
       </Routes>
     </div>
   );
