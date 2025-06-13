@@ -113,6 +113,11 @@ const exercises: Exercise[] = [
     name: "Investment Calculator",
     path: "/investment-calculator",
   },
+  {
+    id: "password-generator",
+    name: "Password Generator",
+    path: "/password-generator",
+  },
 ];
 
 export default function Navigation() {
