@@ -98,6 +98,11 @@ const exercises: Exercise[] = [
     name: "Job Manager",
     path: "/job-manager",
   },
+  {
+    id: "job-manager-delete",
+    name: "Job Manager Delete",
+    path: "/job-manager-delete",
+  },
 ];
 
 export default function Navigation() {

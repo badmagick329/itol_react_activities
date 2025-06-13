@@ -20,6 +20,7 @@ import EnhancedFormHandling from "@/15_EnhancedFormHandling/EnhancedFormHandling
 import MultiSelectCategories from "@/16_MultiSelectCategories/MultiSelectCategories";
 import DynamicCategorySelection from "@/17_DynamicCategorySelection/DynamicCategorySelection";
 import JobManager from "@/18_JobManager/JobManager";
+import JobManagerDelete from "@/19_JobManagerDelete/JobManagerDelete";
 
 export function App() {
   return (
@@ -63,6 +64,7 @@ export function App() {
           element={<DynamicCategorySelection />}
         />
         <Route path="/job-manager" element={<JobManager />} />
+        <Route path="/job-manager-delete" element={<JobManagerDelete />} />
       </Routes>
     </div>
   );
