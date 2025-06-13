@@ -1117,6 +1117,16 @@
       outline-style: none;
     }
   }
+  .disabled\:cursor-not-allowed {
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+  .disabled\:bg-gray-600 {
+    &:disabled {
+      background-color: var(--color-gray-600);
+    }
+  }
   .sm\:w-auto {
     @media (width >= 40rem) {
       width: auto;

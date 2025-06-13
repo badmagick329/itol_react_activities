@@ -16,6 +16,7 @@ import JobManagementForm from "@/11_JobManagementForm/JobManagementForm";
 import JobManagementForm2 from "@/12_JobManagementForm2/JobManagementForm2";
 import JobManagementFormReusable from "@/13_JobManagementFormReusable/JobManagementFormReusable";
 import JobManagementFormDynamic from "@/14_JobManagementFormDynamic/JobManagementFormDynamic";
+import EnhancedFormHandling from "@/15_EnhancedFormHandling/EnhancedFormHandling";
 
 export function App() {
   return (
@@ -45,6 +46,10 @@ export function App() {
         <Route
           path="/job-management-form-dynamic"
           element={<JobManagementFormDynamic />}
+        />
+        <Route
+          path="/enhanced-form-handling"
+          element={<EnhancedFormHandling />}
         />
       </Routes>
     </div>

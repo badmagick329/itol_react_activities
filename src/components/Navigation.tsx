@@ -78,6 +78,11 @@ const exercises: Exercise[] = [
     name: "Job Management Form Dynamic",
     path: "/job-management-form-dynamic",
   },
+  {
+    id: "enhanced-form-handling",
+    name: "Enhanced Form Handling",
+    path: "/enhanced-form-handling",
+  },
 ];
 
 export default function Navigation() {
