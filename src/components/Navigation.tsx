@@ -63,6 +63,11 @@ const exercises: Exercise[] = [
     name: "Job Management Form",
     path: "/job-management-form",
   },
+  {
+    id: "job-management-form-styled",
+    name: "Job Management Form Styled",
+    path: "/job-management-form-styled",
+  },
 ];
 
 export default function Navigation() {

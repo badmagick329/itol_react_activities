@@ -11,8 +11,9 @@ import JobCounterWithState from "@/06_JobCounterWithState/JobCounterWithState";
 import DynamicInputForm from "@/07_DynamicInputForm/DynamicInputForm";
 import BotListManager from "@/08_BotListManager/BotListManager";
 import ModularJobBoard from "@/09_ModularJobBoard/ModularJobBoard";
-import JobManagementForm from "@/10_JobManagementForm/JobManagementForm";
 import StatusBoard from "@/10_StatusBoard/StatusBoard";
+import JobManagementForm from "@/10_JobManagementForm/JobManagementForm";
+import JobManagementForm2 from "@/11_JobManagementForm2/JobManagementForm2";
 
 export function App() {
   return (
@@ -31,6 +32,10 @@ export function App() {
         <Route path="/modular-job-board" element={<ModularJobBoard />} />
         <Route path="/job-management-form" element={<JobManagementForm />} />
         <Route path="/status-board" element={<StatusBoard />} />
+        <Route
+          path="/job-management-form-styled"
+          element={<JobManagementForm2 />}
+        />
       </Routes>
     </div>
   );
