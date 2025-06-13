@@ -23,9 +23,8 @@ export default function CalcHeader() {
   };
 
   const [userInput, setUserInput] = useState(initialValues);
-
   return (
-    <div className="min-h-screen bg-gray-600">
+    <div className="min-h-screen bg-gray-900">
       <Header title="Investment Calculator" />
       <UserInput
         userInput={userInput}
