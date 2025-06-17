@@ -6,11 +6,11 @@
   "main": "src/index.tsx",
   "module": "src/index.tsx",
   "scripts": {
-    "dev": "bun --hot src/index.tsx",
     "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
     "start": "NODE_ENV=production bun src/index.tsx",
-    "css:build": "tailwindcss -i src/input.css -o src/output.css --minify",
-    "css:watch": "tailwindcss -i src/input.css -o src/output.css --watch"
+    "build:css": "postcss src/input.css -o src/output.css",
+    "watch:css": "postcss src/input.css -o src/output.css --watch",
+    "dev": "bun run build:css && bun --hot src/index.tsx"
   },
   "dependencies": {
     "jspdf": "^3.0.1",
@@ -20,9 +20,15 @@
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/bun": "latest",
     "@types/jspdf": "^2.0.0",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.10"
   }
 }
