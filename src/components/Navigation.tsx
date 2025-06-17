@@ -10,117 +10,112 @@ type Exercise = {
 const exercises: Exercise[] = [
   {
     id: "profile-card",
-    name: "Reusable Profile Card",
+    name: "M2A1 Reusable Profile Card",
     path: "/profile-card-component",
   },
   {
     id: "react-jsx",
-    name: "React JSX",
+    name: "M2A2 React JSX",
     path: "/react-jsx",
   },
   {
     id: "job-board",
-    name: "Job Board",
+    name: "M2A3 Job Board",
     path: "/job-board",
   },
   {
-    id: "job-counter",
-    name: "Job Counter",
-    path: "/job-counter",
-  },
-  {
     id: "styled-button",
-    name: "Styled Button",
+    name: "M3A1 Styled Button",
     path: "/styled-button",
   },
   {
+    id: "job-counter",
+    name: "M3A2 Job Counter",
+    path: "/job-counter",
+  },
+  {
     id: "advanced-job-counter",
-    name: "Advanced Job Counter",
+    name: "M3A3 Advanced Job Counter",
     path: "/advanced-job-counter",
   },
   {
     id: "dynamic-input-form",
-    name: "Dynamic Input Form",
+    name: "M3A4 Dynamic Input Form",
     path: "/dynamic-input-form",
   },
   {
     id: "bot-list-manager",
-    name: "Bot List Manager",
+    name: "M3A5_M4A1 Bot List Manager",
     path: "/bot-list-manager",
   },
   {
     id: "modular-job-board",
-    name: "Modular Job Board",
+    name: "M4A2-3 Modular Job Board",
     path: "/modular-job-board",
   },
   {
     id: "status-board",
-    name: "Status Board",
+    name: "M4A4 Status Board",
     path: "/status-board",
   },
   {
     id: "job-management-form",
-    name: "Job Management Form",
+    name: "M5A1-2 Job Management Form",
     path: "/job-management-form",
   },
   {
-    id: "job-management-form-styled",
-    name: "Job Management Form Styled",
-    path: "/job-management-form-styled",
-  },
-  {
     id: "job-management-form-reusable",
-    name: "Job Management Form Reusable",
+    name: "M5A3 Job Management Form Reusable",
     path: "/job-management-form-reusable",
   },
   {
     id: "job-management-form-dynamic",
-    name: "Job Management Form Dynamic",
+    name: "M5A4 Job Management Form Dynamic",
     path: "/job-management-form-dynamic",
   },
   {
     id: "enhanced-form-handling",
-    name: "Enhanced Form Handling",
+    name: "M5A5 Enhanced Form Handling",
     path: "/enhanced-form-handling",
   },
   {
     id: "multi-select-categories",
-    name: "Multi-Select Categories",
+    name: "M6A1 Multi-Select Categories",
     path: "/multi-select-categories",
   },
   {
     id: "dynamic-category-selection",
-    name: "Dynamic Category Selection",
+    name: "M6A2 Dynamic Category Selection",
     path: "/dynamic-category-selection",
   },
   {
     id: "job-manager",
-    name: "Job Manager",
+    name: "M6A3 Job Manager",
     path: "/job-manager",
   },
   {
     id: "job-manager-delete",
-    name: "Job Manager Delete",
+    name: "M6A4 Job Manager Delete",
     path: "/job-manager-delete",
   },
   {
     id: "job-manager-localstorage",
-    name: "Job Manager LocalStorage",
+    name: "M6A5 Job Manager LocalStorage",
     path: "/job-manager-localstorage",
   },
   {
     id: "investment-calculator",
-    name: "Investment Calculator",
+    name: "M6A6-M7 Investment Calculator",
     path: "/investment-calculator",
   },
   {
     id: "password-generator",
-    name: "Password Generator",
+    name: "M8 Password Generator",
     path: "/password-generator",
   },
   {
     id: "movie-review-app",
-    name: "Movie Review App",
+    name: "M9 Movie Review App",
     path: "/movie-review-app",
   },
 ];
@@ -155,17 +150,24 @@ export default function Navigation() {
             Exercises ▼
           </button>{" "}
           {isDropdownOpen && (
-            <div className="absolute right-0 mt-1 w-64 bg-slate-800 rounded shadow-lg z-20 max-h-80 overflow-y-auto">
-              {exercises.map((exercise) => (
-                <Link
-                  key={exercise.id}
-                  to={exercise.path}
-                  onClick={closeDropdown}
-                  className="block px-4 py-2 text-white hover:bg-slate-700"
-                >
-                  {exercise.name}
-                </Link>
-              ))}
+            <div className="absolute right-0 mt-1 w-[480px] bg-slate-800 rounded shadow-lg z-20 max-h-80 overflow-y-auto">
+              {exercises.map((exercise) => {
+                const prefix = exercise.name.split(" ", 1)[0];
+                const rest = exercise.name.slice(prefix.length).trim();
+                return (
+                  <Link
+                    key={exercise.id}
+                    to={exercise.path}
+                    onClick={closeDropdown}
+                    className="block px-4 py-2 text-white hover:bg-slate-700 w-[480px]"
+                  >
+                    <div className="flex justify-between">
+                      <span className="font-semibold">{prefix}</span>
+                      <span className="text-white/60">{rest}</span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           )}
         </div>
