@@ -1,6 +1,10 @@
 # bun-react-template
 
-## Run
+## Setup and Run
+
+```bash
+bun install
+```
 
 ```bash
 bun start
